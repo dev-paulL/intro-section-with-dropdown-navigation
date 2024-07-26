@@ -1,7 +1,6 @@
 const BODY = document.body;
 const OVERLAY = document.querySelector(".overlay");
-/* const MOBILE_NAV_WRAPPER = document.querySelector(".mobile-nav-wrapper"); */
-const MOBILE_NAV_WRAPPER = document.querySelector('.mobile-nav');
+const MOBILE_NAV_WRAPPER = document.querySelector(".mobile-nav");
 const FEATURES_DOWN_ARROW = document.querySelector(".features-arrow-down");
 const FEATURES_UP_ARROW = document.querySelector(".features-arrow-up");
 const COMPANY_DOWN_ARROW = document.querySelector(".company-arrow-down");
@@ -10,9 +9,6 @@ const OPEN_MENU_BTN = document.querySelector(".open_menu_btn");
 const CLOSE_MENU_BTN = document.querySelector(".close_menu_btn");
 const FEATURES_LINK = document.querySelector(".features_link");
 const COMPANY_LINK = document.querySelector(".company_link");
-/* 
-const DESKTOP_FEATURES_LINK = document.querySelector(".desktop-features_link");
-const DESKTOP_COMPANY_LINK = document.querySelector(".desktop-company_link"); */
 const MOBILE_FEATURES_DROPDOWN = document.querySelector(
   ".mobile-features-dropdown"
 );
@@ -20,26 +16,24 @@ const MOBILE_COMPANY_DROPDOWN = document.querySelector(
   ".mobile-company-dropdown"
 );
 
-const DESKTOP_NAV = document.querySelector(".desktop_nav");
-const DESKTOP_FEATURES_DROPDOWN = document.querySelector(
-  ".desktop-features-dropdown"
-);
-const DESKTOP_COMPANY_DROPDOWN = document.querySelector(
-  ".desktop-company-dropdown"
-);
+const closeMenu = () => {
+  BODY.style.overflow = "auto";
+  OVERLAY.classList.add("hidden");
+  MOBILE_NAV_WRAPPER.classList.add("hidden");
+};
 
 OPEN_MENU_BTN.addEventListener("click", () => {
-  console.log("Btn clicked OPEN MENU");
   BODY.style.overflow = "hidden";
   OVERLAY.classList.remove("hidden");
   MOBILE_NAV_WRAPPER.classList.remove("hidden");
 });
 
 CLOSE_MENU_BTN.addEventListener("click", () => {
-  console.log("Btn clicked CLOSE MENU");
-  BODY.style.overflow = "auto";
-  OVERLAY.classList.add("hidden");
-  MOBILE_NAV_WRAPPER.classList.add("hidden");
+  closeMenu();
+});
+
+OVERLAY.addEventListener("click", () => {
+  closeMenu();
 });
 
 const toggleDropDownMenu = (link, downArrow, upArrow, dropDown) => {
@@ -72,18 +66,3 @@ toggleDropDownMenu(
   COMPANY_UP_ARROW,
   MOBILE_COMPANY_DROPDOWN
 );
-
-/* toggleDropDownMenu(
-  DESKTOP_FEATURES_LINK,
-  FEATURES_DOWN_ARROW,
-  FEATURES_UP_ARROW,
-  DESKTOP_FEATURES_DROPDOWN
-);
-
-toggleDropDownMenu(
-  DESKTOP_COMPANY_LINK,
-  COMPANY_DOWN_ARROW,
-  COMPANY_UP_ARROW,
-  DESKTOP_COMPANY_DROPDOWN
-);
- */

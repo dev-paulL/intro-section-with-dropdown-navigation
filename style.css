@@ -23,7 +23,9 @@ body {
   flex-flow: column;
   background-color: var(--almostWhite);
 }
-
+a {
+  transition: all 0.3s ease;
+}
 header {
   display: flex;
   flex-flow: row;
@@ -33,20 +35,17 @@ header {
   padding: 1rem;
 }
 
-header img {
-  max-height: 2rem;
-}
-
 .logo {
   padding-top: 0.5rem;
 }
 main {
   margin-top: 1rem;
-  height: 98vh;
 }
 
 .hero img {
   max-width: 100%;
+  max-height: inherit;
+  display: block;
 }
 
 .hero h1 {
@@ -78,6 +77,20 @@ main {
   display: block;
   margin: 2rem auto;
   max-width: max-content;
+  border: 1px solid transparent;
+}
+
+.hero picture {
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+.hero a:hover {
+  background-color: var(--almostWhite);
+  color: var(--almostBlack);
+  border: 1px solid var(--almostBlack);
 }
 
 li {
@@ -100,12 +113,11 @@ footer {
   text-align: center;
 }
 
-/* .mobile-nav-wrapper { */
 .mobile-nav {
   position: absolute;
   right: 0;
   top: 0;
-  width: 60vw;
+  width: 65%;
   background-color: white;
   height: 100vh;
   max-width: 40rem;
@@ -115,10 +127,18 @@ footer {
   padding: 1rem;
 }
 
+.mobile-nav > ul {
+  padding: 1rem;
+}
+
+.mobile-nav > ul li {
+  margin: 1rem 0;
+}
 .mobile-nav img {
   align-self: flex-end;
   max-width: 2rem;
 }
+
 .overlay {
   position: absolute;
   background-color: var(--mediumGray);
@@ -138,19 +158,28 @@ footer {
   margin: 1rem 0;
 }
 
-.login-btn {
+.login-ul {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-self: center;
+  align-items: center;
   margin-top: 5rem;
-  display: block;
+}
+.login-ul li,
+.login-ul li a {
+  width: 100%;
+  display: inline-block;
+}
+.login-btn {
   text-align: center;
 }
 
 .register-btn {
-  margin-top: 1.5rem;
   text-align: center;
-  display: block;
-  padding: 0.75rem 0;
+  padding: 0.75rem;
   border-radius: 1rem;
-  border: 2px solid var(--almostBlack);
+  border: 1px solid var(--almostBlack);
 }
 
 .mobile-features-dropdown,
@@ -162,16 +191,25 @@ footer {
   padding-right: 0.5rem;
 }
 
-.hidden {
-  display: none;
-}
-
-.desktop_nav {
-  display: none;
-}
-
+.hidden,
+.desktop_nav,
 .desktop-br {
   display: none;
+}
+
+footer {
+  color: var(--mediumGray);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--almostBlack);
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 63rem) {
@@ -181,7 +219,8 @@ footer {
 
   .hidden,
   .close_menu_btn,
-  .open_menu_btn {
+  .open_menu_btn,
+  .overlay {
     display: none;
   }
 
@@ -200,7 +239,7 @@ footer {
   .mobile-nav > ul {
     display: flex;
     flex-flow: row;
-   /*  position: initial; */
+    /*  position: initial; */
     align-items: center;
     height: auto;
   }
@@ -212,12 +251,13 @@ footer {
     background: var(--almostWhite);
     padding: 1rem;
     border-radius: 0.6rem;
-    box-shadow: 0px 5px 50px 1px rgba(136, 136, 136, 0.575);
+    /* box-shadow: 0px 5px 50px 1px rgba(136, 136, 136, 0.575); */
+    box-shadow: 0px 5px 15px 5px rgb(197 197 197 / 57%);
   }
 
-  main {
+  /* main {
     height: auto;
-  }
+  } */
 
   .mobile-nav a {
     text-decoration: none;
@@ -227,19 +267,20 @@ footer {
 
   .mobile-nav a:hover {
     color: var(--almostBlack);
-    font-weight: 700;
+    font-weight: 600;
   }
   .mobile-nav li {
     padding: 0 1rem;
   }
 
-  .features_link {
+  .features_link img,
+  .company_link img {
     position: relative;
   }
 
-  .company_link {
+  /*   .company_link {
     position: relative;
-  }
+  } */
 
   .mobile-features-dropdown {
     margin-left: -2.5%;
@@ -256,11 +297,6 @@ footer {
     margin-top: 0.5rem;
   }
 
-  .login-btn,
-  .register-btn {
-    margin-top: 0;
-  }
-
   .register-btn {
     padding: 0.8rem 1rem;
     border: 1px solid var(--almostBlack);
@@ -270,12 +306,14 @@ footer {
   header {
     justify-content: initial;
     position: relative;
+    padding: 0.5rem 2rem;
   }
 
   .login-ul {
-    float: right;
     position: absolute;
-    right: 2rem;
+    right: 0;
+    width: auto;
+    margin-top: 0;
   }
 
   .hero {
@@ -292,7 +330,9 @@ footer {
     grid-column-start: 2;
     grid-row-start: span 4;
     align-self: center;
-    min-height: 100%;
+    /*   min-height: 100%; */
+    width: initial;
+    max-height: 45rem;
   }
 
   .hero h1 {
@@ -322,18 +362,13 @@ footer {
     grid-row-start: 3;
   }
 
-  .hero a:hover {
-    background-color: var(--almostWhite);
-    color: var(--almostBlack);
-  }
-
   .clients-list {
     width: 80%;
     margin: 0;
     gap: 1rem;
     grid-row-start: 4;
-    justify-items: left;
-    align-self: flex-start;
+    justify-items: center;
+    align-self: flex-end;
   }
 
   .desktop-br {
