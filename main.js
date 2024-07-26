@@ -1,6 +1,7 @@
 const BODY = document.body;
 const OVERLAY = document.querySelector(".overlay");
-const MOBILE_NAV_WRAPPER = document.querySelector(".mobile-nav-wrapper");
+/* const MOBILE_NAV_WRAPPER = document.querySelector(".mobile-nav-wrapper"); */
+const MOBILE_NAV_WRAPPER = document.querySelector('.mobile-nav');
 const FEATURES_DOWN_ARROW = document.querySelector(".features-arrow-down");
 const FEATURES_UP_ARROW = document.querySelector(".features-arrow-up");
 const COMPANY_DOWN_ARROW = document.querySelector(".company-arrow-down");
@@ -9,9 +10,9 @@ const OPEN_MENU_BTN = document.querySelector(".open_menu_btn");
 const CLOSE_MENU_BTN = document.querySelector(".close_menu_btn");
 const FEATURES_LINK = document.querySelector(".features_link");
 const COMPANY_LINK = document.querySelector(".company_link");
-
+/* 
 const DESKTOP_FEATURES_LINK = document.querySelector(".desktop-features_link");
-const DESKTOP_COMPANY_LINK = document.querySelector(".desktop-company_link");
+const DESKTOP_COMPANY_LINK = document.querySelector(".desktop-company_link"); */
 const MOBILE_FEATURES_DROPDOWN = document.querySelector(
   ".mobile-features-dropdown"
 );
@@ -72,7 +73,7 @@ toggleDropDownMenu(
   MOBILE_COMPANY_DROPDOWN
 );
 
-toggleDropDownMenu(
+/* toggleDropDownMenu(
   DESKTOP_FEATURES_LINK,
   FEATURES_DOWN_ARROW,
   FEATURES_UP_ARROW,
@@ -85,3 +86,4 @@ toggleDropDownMenu(
   COMPANY_UP_ARROW,
   DESKTOP_COMPANY_DROPDOWN
 );
+ */

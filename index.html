@@ -20,35 +20,32 @@
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
     <link rel="stylesheet" href="style.css" type="text/css" />
-
-    
   </head>
   <body>
-    
     <div class="overlay hidden"></div>
     <header>
       <img src="images/logo.svg" class="logo" alt="logo" />
       <img src="images/icon-menu.svg" alt="Open Menu" class="open_menu_btn" />
 
-      <div class="mobile-nav-wrapper hidden">
-        <img
-          src="images/icon-close-menu.svg"
-          alt="Close Menu"
-          class="close_menu_btn"
-        />
-        <div class="mobile-nav">
+      <!-- <div class="mobile-nav-wrapper"> -->
+        <nav class="mobile-nav hidden">
+          <img
+            src="images/icon-close-menu.svg"
+            alt="Close Menu"
+            class="close_menu_btn"
+          />
           <ul>
-            <li >
-              <a href="#" class="features_link">Features
-              <img
-                class="features-arrow-down"
-                src="images/icon-arrow-down.svg"
-                alt="features down arrow"
-              />
-              <img
-                class="features-arrow-up hidden"
-                src="images/icon-arrow-up.svg"
-                alt="features up arrow"
+            <li>
+              <a href="#" class="features_link"
+                >Features
+                <img
+                  class="features-arrow-down"
+                  src="images/icon-arrow-down.svg"
+                  alt="features down arrow" />
+                <img
+                  class="features-arrow-up hidden"
+                  src="images/icon-arrow-up.svg"
+                  alt="features up arrow"
               /></a>
 
               <ul class="mobile-features-dropdown hidden">
@@ -74,18 +71,18 @@
                 </li>
               </ul>
             </li>
-            <li >
-              <a class="company_link" href="#">Company <img
-                class="company-arrow-down"
-                src="images/icon-arrow-down.svg"
-                alt="company down arrow"
-              />
-              <img
-                class="company-arrow-up hidden"
-                src="images/icon-arrow-up.svg"
-                alt="company up arrow"
-              /></a
-              >
+            <li>
+              <a class="company_link" href="#"
+                >Company
+                <img
+                  class="company-arrow-down"
+                  src="images/icon-arrow-down.svg"
+                  alt="company down arrow" />
+                <img
+                  class="company-arrow-up hidden"
+                  src="images/icon-arrow-up.svg"
+                  alt="company up arrow"
+              /></a>
               <ul class="mobile-company-dropdown hidden">
                 <li><a href="#">History</a></li>
                 <li><a href="#">Our Team</a></li>
@@ -96,11 +93,11 @@
             <li><a href="#">About</a></li>
           </ul>
 
-          <ul>
+          <ul class="login-ul">
             <li><a href="#" class="login-btn">Login</a></li>
             <li><a href="#" class="register-btn">Register</a></li>
           </ul>
-        </div>
+        </nav>
       </div>
       <!--  
       Features
@@ -112,7 +109,7 @@
       Register
     
     -->
-      <nav class="desktop_nav">
+      <!-- <nav class="desktop_nav">
         <ul>
           <li >
             <a href="#" class="desktop-features_link">Features
@@ -176,7 +173,7 @@
           <li><a href="#" class="login-btn">Login</a></li>
           <li><a href="#" class="register-btn">Register</a></li>
         </ul>
-      </nav>
+      </nav> -->
     </header>
 
     <main>
@@ -186,7 +183,7 @@
             media="(max-width: 63rem)"
             srcset="images/image-hero-mobile.png"
           />
-          <img src="images/image-hero-desktop.png" alt="hero desktop"/>
+          <img src="images/image-hero-desktop.png" alt="hero desktop" />
         </picture>
 
         <h1>Make <br class="desktop-br" />remote work</h1>
