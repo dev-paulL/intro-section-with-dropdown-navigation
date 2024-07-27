@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-E-ef75TAMF](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-E-ef75TAMF)
 - Live Site URL: [https://dev-paull.github.io/intro-section-with-dropdown-navigation/](https://dev-paull.github.io/intro-section-with-dropdown-navigation/)
 
 ## My process

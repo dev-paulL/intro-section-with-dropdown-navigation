@@ -365,6 +365,7 @@ footer a:hover {
     border-radius: 0.8rem;
     cursor: pointer;
     margin-top: 3rem;
+    font-weight: 600;
   }
 
   .clients-list {
