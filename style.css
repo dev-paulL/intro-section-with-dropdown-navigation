@@ -23,9 +23,11 @@ body {
   flex-flow: column;
   background-color: var(--almostWhite);
 }
+
 a {
   transition: all 0.3s ease;
 }
+
 header {
   display: flex;
   flex-flow: row;
@@ -38,6 +40,7 @@ header {
 .logo {
   padding-top: 0.5rem;
 }
+
 main {
   margin-top: 1rem;
 }
@@ -239,7 +242,6 @@ footer a:hover {
   .mobile-nav > ul {
     display: flex;
     flex-flow: row;
-    /*  position: initial; */
     align-items: center;
     height: auto;
   }
@@ -251,13 +253,8 @@ footer a:hover {
     background: var(--almostWhite);
     padding: 1rem;
     border-radius: 0.6rem;
-    /* box-shadow: 0px 5px 50px 1px rgba(136, 136, 136, 0.575); */
     box-shadow: 0px 5px 15px 5px rgb(197 197 197 / 57%);
   }
-
-  /* main {
-    height: auto;
-  } */
 
   .mobile-nav a {
     text-decoration: none;
@@ -277,10 +274,6 @@ footer a:hover {
   .company_link img {
     position: relative;
   }
-
-  /*   .company_link {
-    position: relative;
-  } */
 
   .mobile-features-dropdown {
     margin-left: -2.5%;
@@ -330,7 +323,6 @@ footer a:hover {
     grid-column-start: 2;
     grid-row-start: span 4;
     align-self: center;
-    /*   min-height: 100%; */
     width: initial;
     max-height: 45rem;
   }
@@ -341,7 +333,6 @@ footer a:hover {
     font-size: 4.8rem;
     text-align: left;
     align-self: flex-end;
-    /* width: 80%; */
   }
 
   .hero p {

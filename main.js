@@ -1,20 +1,18 @@
+const select = (item) => document.querySelector(item);
+
 const BODY = document.body;
-const OVERLAY = document.querySelector(".overlay");
-const MOBILE_NAV_WRAPPER = document.querySelector(".mobile-nav");
-const FEATURES_DOWN_ARROW = document.querySelector(".features-arrow-down");
-const FEATURES_UP_ARROW = document.querySelector(".features-arrow-up");
-const COMPANY_DOWN_ARROW = document.querySelector(".company-arrow-down");
-const COMPANY_UP_ARROW = document.querySelector(".company-arrow-up");
-const OPEN_MENU_BTN = document.querySelector(".open_menu_btn");
-const CLOSE_MENU_BTN = document.querySelector(".close_menu_btn");
-const FEATURES_LINK = document.querySelector(".features_link");
-const COMPANY_LINK = document.querySelector(".company_link");
-const MOBILE_FEATURES_DROPDOWN = document.querySelector(
-  ".mobile-features-dropdown"
-);
-const MOBILE_COMPANY_DROPDOWN = document.querySelector(
-  ".mobile-company-dropdown"
-);
+const OVERLAY = select(".overlay");
+const MOBILE_NAV_WRAPPER = select(".mobile-nav");
+const FEATURES_DOWN_ARROW = select(".features-arrow-down");
+const FEATURES_UP_ARROW = select(".features-arrow-up");
+const COMPANY_DOWN_ARROW = select(".company-arrow-down");
+const COMPANY_UP_ARROW = select(".company-arrow-up");
+const OPEN_MENU_BTN = select(".open_menu_btn");
+const CLOSE_MENU_BTN = select(".close_menu_btn");
+const FEATURES_LINK = select(".features_link");
+const COMPANY_LINK = select(".company_link");
+const MOBILE_FEATURES_DROPDOWN = select(".mobile-features-dropdown");
+const MOBILE_COMPANY_DROPDOWN = select(".mobile-company-dropdown");
 
 const closeMenu = () => {
   BODY.style.overflow = "auto";
@@ -28,27 +26,17 @@ OPEN_MENU_BTN.addEventListener("click", () => {
   MOBILE_NAV_WRAPPER.classList.remove("hidden");
 });
 
-CLOSE_MENU_BTN.addEventListener("click", () => {
-  closeMenu();
-});
+CLOSE_MENU_BTN.addEventListener("click", closeMenu);
 
-OVERLAY.addEventListener("click", () => {
-  closeMenu();
-});
+OVERLAY.addEventListener("click", closeMenu);
 
 const toggleDropDownMenu = (link, downArrow, upArrow, dropDown) => {
-  let isOpen = false;
-  link.addEventListener("click", () => {
-    if (!isOpen) {
-      downArrow.classList.add("hidden");
-      upArrow.classList.remove("hidden");
-      dropDown.classList.remove("hidden");
-    } else {
-      downArrow.classList.remove("hidden");
-      upArrow.classList.add("hidden");
-      dropDown.classList.add("hidden");
-    }
+  let isOpen = true;
 
+  link.addEventListener("click", () => {
+    downArrow.classList.toggle("hidden", isOpen);
+    upArrow.classList.toggle("hidden", !isOpen);
+    dropDown.classList.toggle("hidden", !isOpen);
     isOpen = !isOpen;
   });
 };
