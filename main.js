@@ -1,3 +1,4 @@
+// Selecting DOM elements
 const select = (item) => document.querySelector(item);
 
 const BODY = document.body;
@@ -14,33 +15,40 @@ const COMPANY_LINK = select(".company_link");
 const MOBILE_FEATURES_DROPDOWN = select(".mobile-features-dropdown");
 const MOBILE_COMPANY_DROPDOWN = select(".mobile-company-dropdown");
 
+// Hiding the overlay and the side menu
 const closeMenu = () => {
-  BODY.style.overflow = "auto";
   OVERLAY.classList.add("hidden");
   MOBILE_NAV_WRAPPER.classList.add("hidden");
+  BODY.style.overflow = "auto";
 };
 
+// Toggling the nav dropdowns when clicking on it
+// (Showing different arrows if menu is down or up)
+// I made the function reusable
+const toggleDropDownMenu = (link, downArrow, upArrow, dropDown) => {
+  let isOpen = false; // By default, dropdown menu is up (closed)
+
+  link.addEventListener("click", () => {
+    isOpen = !isOpen; // If open = closed, if closed = open
+    downArrow.classList.toggle("hidden", isOpen);
+    upArrow.classList.toggle("hidden", !isOpen);
+    dropDown.classList.toggle("hidden", !isOpen);
+  });
+};
+
+// Showing the right side navigation when clicking on the hamburger
 OPEN_MENU_BTN.addEventListener("click", () => {
   BODY.style.overflow = "hidden";
   OVERLAY.classList.remove("hidden");
   MOBILE_NAV_WRAPPER.classList.remove("hidden");
 });
 
+// Using the closeMenu() function that hides the side menu & the overlay
+// I think closing a menu when clicking anywhere out of it is good user experience
 CLOSE_MENU_BTN.addEventListener("click", closeMenu);
-
 OVERLAY.addEventListener("click", closeMenu);
 
-const toggleDropDownMenu = (link, downArrow, upArrow, dropDown) => {
-  let isOpen = true;
-
-  link.addEventListener("click", () => {
-    downArrow.classList.toggle("hidden", isOpen);
-    upArrow.classList.toggle("hidden", !isOpen);
-    dropDown.classList.toggle("hidden", !isOpen);
-    isOpen = !isOpen;
-  });
-};
-
+// Defining the dropdown menus to toggle with the DOM elements we selected
 toggleDropDownMenu(
   FEATURES_LINK,
   FEATURES_DOWN_ARROW,

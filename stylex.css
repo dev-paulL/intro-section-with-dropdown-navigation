@@ -1,16 +1,18 @@
-/* Colors & font from style-guide.md, reset */
+/* Root variables for color scheme */
 :root {
   --almostWhite: hsl(0, 0%, 98%);
   --mediumGray: hsl(0, 0%, 41%);
   --almostBlack: hsl(0, 0%, 8%);
 }
 
+/* Reset default styles */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Base styles */
 body,
 html {
   width: 100%;
@@ -29,6 +31,11 @@ a {
   transition: all 0.3s ease;
 }
 
+li {
+  list-style: none;
+}
+
+/* Header styles */
 header {
   display: flex;
   flex-flow: row;
@@ -42,10 +49,12 @@ header {
   padding-top: 0.5rem;
 }
 
+/* Main content styles */
 main {
   margin-top: 1rem;
 }
 
+/* Hero section styles */
 .hero img {
   max-width: 100%;
   max-height: inherit;
@@ -84,6 +93,12 @@ main {
   border: 1px solid transparent;
 }
 
+.hero a:hover {
+  background-color: var(--almostWhite);
+  color: var(--almostBlack);
+  border: 1px solid var(--almostBlack);
+}
+
 .hero picture {
   display: block;
   margin: 0 auto;
@@ -91,16 +106,7 @@ main {
   max-width: 100%;
 }
 
-.hero a:hover {
-  background-color: var(--almostWhite);
-  color: var(--almostBlack);
-  border: 1px solid var(--almostBlack);
-}
-
-li {
-  list-style: none;
-}
-
+/* Mobile navigation styles */
 .mobile-nav {
   position: absolute;
   right: 0;
@@ -123,11 +129,28 @@ li {
 .mobile-nav > ul li {
   margin: 1.5rem 0;
 }
+
 .mobile-nav img {
   align-self: flex-end;
   max-width: 2rem;
 }
 
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--mediumGray);
+  font-weight: 500;
+}
+
+.mobile-features-dropdown,
+.mobile-company-dropdown {
+  padding-left: 1.5rem;
+}
+
+.mobile-features-dropdown li a img {
+  padding-right: 0.5rem;
+}
+
+/* "Hide" the page when menu is open */
 .overlay {
   position: absolute;
   background-color: var(--mediumGray);
@@ -137,12 +160,7 @@ li {
   z-index: 1;
 }
 
-.mobile-nav a {
-  text-decoration: none;
-  color: var(--mediumGray);
-  font-weight: 500;
-}
-
+/* Login and register button styles */
 .login-ul {
   display: flex;
   flex-direction: column;
@@ -157,6 +175,7 @@ li {
   margin: 0;
   display: inline-block;
 }
+
 .login-btn {
   text-align: center;
 }
@@ -168,21 +187,14 @@ li {
   border: 1px solid var(--almostBlack);
 }
 
-.mobile-features-dropdown,
-.mobile-company-dropdown {
-  padding-left: 1.5rem;
-}
-
-.mobile-features-dropdown li a img {
-  padding-right: 0.5rem;
-}
-
+/* Hide elements by default */
 .hidden,
 .desktop_nav,
 .desktop-br {
   display: none;
 }
 
+/* Clients list styles */
 .clients-list {
   width: 90%;
   margin: 3rem auto;
@@ -192,6 +204,7 @@ li {
   justify-items: center;
 }
 
+/* Footer styles */
 footer {
   color: var(--mediumGray);
   font-weight: 700;
@@ -209,11 +222,13 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Media query for desktop layout */
 @media screen and (min-width: 63rem) {
   * {
     font-size: 0.95rem;
   }
 
+  /* Hide mobile-specific elements */
   .hidden,
   .close_menu_btn,
   .open_menu_btn,
@@ -221,6 +236,7 @@ footer a:hover {
     display: none;
   }
 
+  /* Desktop navigation styles */
   .mobile-nav {
     padding: 0;
     background: transparent;
@@ -240,16 +256,6 @@ footer a:hover {
     height: auto;
   }
 
-  .mobile-features-dropdown,
-  .mobile-company-dropdown {
-    position: absolute;
-    top: 4.5rem;
-    background: var(--almostWhite);
-    padding: 1rem;
-    border-radius: 0.6rem;
-    box-shadow: 0px 5px 15px 5px rgb(197 197 197 / 57%);
-  }
-
   .mobile-nav a {
     text-decoration: none;
     color: var(--mediumGray);
@@ -260,6 +266,7 @@ footer a:hover {
     color: var(--almostBlack);
     font-weight: 600;
   }
+
   .mobile-nav li {
     padding: 0 1rem;
   }
@@ -267,6 +274,17 @@ footer a:hover {
   .features_link img,
   .company_link img {
     position: relative;
+  }
+
+  /* Desktop dropdown menus styles */
+  .mobile-features-dropdown,
+  .mobile-company-dropdown {
+    position: absolute;
+    top: 4.5rem;
+    background: var(--almostWhite);
+    padding: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 5px 15px 5px rgb(197 197 197 / 57%);
   }
 
   .mobile-features-dropdown {
@@ -284,17 +302,13 @@ footer a:hover {
     margin-top: 0.5rem;
   }
 
-  .register-btn {
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--almostBlack);
-    border-radius: 0.5rem;
-  }
-
+  /* Desktop header styles */
   header {
     justify-content: initial;
     padding: 0.5rem 2rem;
   }
 
+  /* Desktop login and register styles */
   .login-ul {
     position: absolute;
     right: 0;
@@ -302,6 +316,13 @@ footer a:hover {
     margin-top: 0;
   }
 
+  .register-btn {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--almostBlack);
+    border-radius: 0.5rem;
+  }
+
+  /* Desktop hero section styles */
   .hero {
     display: grid;
     grid-template-rows: repeat(auto-fill, 3);
@@ -309,7 +330,6 @@ footer a:hover {
     align-items: center;
     width: 80%;
     column-gap: 5rem;
-    /* padding: 3rem; */
     margin: 1rem auto;
   }
 
@@ -343,7 +363,6 @@ footer a:hover {
     justify-self: start;
     margin: 0;
     border-radius: 0.8rem;
-    font-size: 1.3rem;
     cursor: pointer;
     margin-top: 3rem;
   }
@@ -357,6 +376,7 @@ footer a:hover {
     align-self: flex-end;
   }
 
+  /* Show desktop-specific elements */
   .desktop-br {
     display: inline-block;
   }

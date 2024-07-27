@@ -17,25 +17,25 @@ Users should be able to:
 <details open>
 <summary>Desktop</summary>
 
-![Desktop](./desktop_screenshot.png)
+![Desktop](./desktop-screenshot.png)
 </details>
 
 <details>
 <summary>Desktop dropdowns</summary>
 
-![Desktop dropdowns](./desktop-dropdowns_screenshot.png)
+![Desktop dropdowns](./desktop_dropdowns-screenshot.png)
 </details>
 
 <details>
 <summary>Mobile</summary>
 
-![Mobile](./mobile_screenshot.png)
+![Mobile](./mobile-screenshot.png)
 </details>
 
 <details>
 <summary>Mobile dropdowns</summary>
 
-![Mobile dropdowns](./mobile-dropdowns_screenshot.png)
+![Mobile dropdowns](./mobile_dropdowns-screenshot.png)
 </details>
 
 
@@ -47,10 +47,15 @@ Users should be able to:
 ## My process
 
 - Analyzed the screenshots _(design folder)_ to determine how to structure the page, and how much time I would take to replicate it.
-- Started with the mobile design since it looked less complex, then implemented its basic navigation menu.
+- Read the *style-guide.md* & started with the mobile design since it looked less complex, then implemented its basic navigation menu.
 - Implemented the dropdown menus.
 
 - After completing the mobile version, modified the different elements to ensure my desktop version matched the screenshots.
+
+- Reviewed my code, improved its quality and added some comments.
+
+- Tested on multiple devices and screen-sizes to make sure everything works fine.
+
 
 ### Built with
 
